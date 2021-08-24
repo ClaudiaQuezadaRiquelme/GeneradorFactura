@@ -9,23 +9,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Formulario</title>
+<!-- Bootstrap 5 -->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
 	crossorigin="anonymous">
-<style>
-.container {
-	margin-top: 39px;
-	border: solid 1px black;
-	padding-top: 30px;
-	padding-bottom: 30px;
-}
 
-.formData {
-	display: flex;
-}
-</style>
+<!-- Your own css -->
+<link rel="stylesheet" href="./WEB-INF/css/style.css">
 </head>
 <body>
 
@@ -34,25 +26,25 @@
 			<div class="formData">
 				<div class="col">
 					<div class="form-group">
-						<label for="exampleInputEmail">Nombre Completo</label> <input
-							type="text" class="form-control" id="nombre" name="nombre"
+						<label for="exampleInputEmail">Nombre Completo</label>
+						<input type="text" class="form-control" id="nombre" name="nombre"
 							placeholder="Ingrese su nombre" required>
 					</div>
 					<div class="form-group">
-						<label for="exampleInputEmail">Empresa</label> <input type="text"
-							class="form-control" id="empresa" name="empresa"
+						<label for="exampleInputEmail">Empresa</label>
+						<input type="text" class="form-control" id="empresa" name="empresa"
 							placeholder="Ingrese empresa" required>
 					</div>
 					<div class="form-group">
-						<label for="exampleInputEmail">Rut</label> <input type="text"
-							class="form-control" id="rut" name="rut"
+						<label for="exampleInputEmail">Rut</label>
+						<input type="text" class="form-control" id="rut" name="rut"
 							placeholder="Ingrese su rut" required>
 					</div>
 				</div>
 				<div class="col">
 					<div class="form-group">
-						<label for="exampleInputEmail">Dirección</label> <input
-							type="text" class="form-control" id="direccion" name="direccion"
+						<label for="exampleInputEmail">Dirección</label>
+						<input type="text" class="form-control" id="direccion" name="direccion"
 							placeholder="Ingrese dirección" required>
 					</div>
 					<div class="form-group">
@@ -61,8 +53,8 @@
 							placeholder="Ingrese ciudad" required>
 					</div>
 					<div class="form-group">
-						<label for="exampleInputEmail">País</label> <input type="text"
-							class="form-control" id="pais" name="pais"
+						<label for="exampleInputEmail">País</label>
+						<input type="text" class="form-control" id="pais" name="pais"
 							placeholder="Ingrese país" required>
 					</div>
 				</div>
@@ -70,6 +62,48 @@
 			<button type="submit" class="btn btn-primary">Enviar</button>
 		</form>
 	</div>
+	<table class="table table-dark">
+		<thead>
+		  <tr>
+			<th scope="col">ITEM</th>
+			<th scope="col">DESCRIPCIÓN</th>
+			<th scope="col">VALOR UNIDAD</th>
+			<th scope="col">CANTIDAD</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+			<td>Válvulas Titanio</th>
+			<td>Válvulas de carrera</td>
+			<td>$120.000</td>
+			<td><input type="number" class="form-control" id="valvula-count" name="valvula-count" placeholder="0"></td>
+		  </tr>
+		  <tr>
+			<td>Turbo Full Carrera</th>
+			<td>Turbo de competición multimarca</td>
+			<td>1.700.000</td>
+			<td><input type="number" class="form-control" id="turbo-count" name="turbo-count" placeholder="0"></td>
+		  </tr>
+		  <tr>
+			<td>Kit de Freno Competición</th>
+			<td>Juego de discos, balatas, caliper de competición</td>
+			<td>$760.000</td>
+			<td><input type="number" class="form-control" id="freno-count" name="freno-count" placeholder="0"></td>
+		  </tr>
+		  <tr>
+			<td>Sistema de refrigeración</th>
+			<td>Sistema enfriamiento motor Carrera</td>
+			<td>$2.300.000</td>
+			<td><input type="number" class="form-control" id="refri-count" name="refri-count" placeholder="0"></td>
+		  </tr>
+		  <tr>
+			<td>Plumillas Limpiaparabrisas Standar</th>
+			<td>Plumillas para la lluvia</td>
+			<td>$10.000</td>
+			<td><input type="number" class="form-control" id="plumillas-count" name="plumillas-count" placeholder="0"></td>
+		  </tr>
+		</tbody>
+	  </table>
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"

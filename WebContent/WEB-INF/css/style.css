@@ -1,0 +1,10 @@
+.container {
+	margin-top: 39px;
+	border: solid 1px black;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.formData {
+	display: flex;
+}
