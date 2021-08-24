@@ -75,31 +75,31 @@
 		  <tr>
 			<td>Válvulas Titanio</th>
 			<td>Válvulas de carrera</td>
-			<td>$120.000</td>
+			<td id="valvula-price" name="valvula-price">$120.000</td>
 			<td><input type="number" class="form-control" id="valvula-count" name="valvula-count" placeholder="0"></td>
 		  </tr>
 		  <tr>
 			<td>Turbo Full Carrera</th>
 			<td>Turbo de competición multimarca</td>
-			<td>1.700.000</td>
+			<td id="turbo-price" name="turbo-price">1.700.000</td>
 			<td><input type="number" class="form-control" id="turbo-count" name="turbo-count" placeholder="0"></td>
 		  </tr>
 		  <tr>
 			<td>Kit de Freno Competición</th>
 			<td>Juego de discos, balatas, caliper de competición</td>
-			<td>$760.000</td>
+			<td id="freno-price" name="freno-price">$760.000</td>
 			<td><input type="number" class="form-control" id="freno-count" name="freno-count" placeholder="0"></td>
 		  </tr>
 		  <tr>
 			<td>Sistema de refrigeración</th>
 			<td>Sistema enfriamiento motor Carrera</td>
-			<td>$2.300.000</td>
+			<td id="refri-price" name="refri-price">$2.300.000</td>
 			<td><input type="number" class="form-control" id="refri-count" name="refri-count" placeholder="0"></td>
 		  </tr>
 		  <tr>
 			<td>Plumillas Limpiaparabrisas Standar</th>
 			<td>Plumillas para la lluvia</td>
-			<td>$10.000</td>
+			<td id="plumillas-price" name="plumillas-price">$10.000</td>
 			<td><input type="number" class="form-control" id="plumillas-count" name="plumillas-count" placeholder="0"></td>
 		  </tr>
 		</tbody>
