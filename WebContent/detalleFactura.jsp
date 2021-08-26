@@ -25,6 +25,10 @@
 <% String frenoCount = (String)request.getAttribute("freno-count"); %>
 <% String refriCount = (String)request.getAttribute("refri-count"); %>
 <% String plumillasCount = (String)request.getAttribute("plumillas-count"); %>
+
+<% String totalNetoValue = Integer.toString( Integer.parseInt(valvulaFinalPrice) + Integer.parseInt(turboFinalPrice) + Integer.parseInt(frenoFinalPrice) + Integer.parseInt(refriFinalPrice) + Integer.parseInt(plumillasFinalPrice) ); %>
+<% int porcentajeDescuento = 10; %>
+<% int totalFinalValue = Integer.parseInt(totalNetoValue) - ( (Integer.parseInt(totalNetoValue) * porcentajeDescuento) / 100 ); %>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -110,20 +114,35 @@
 		</table>
 	</div>
     
-    
+    <footer class="text-white bg-dark">
+		<div id="footerContent" class="container">
+			<div class="footerItem p-3">
+				<h5>VALOR TOTAL NETO</h5>
+				<p id="totalNeto"><%= totalNetoValue %></p>
+			</div>
+			<div class="footerItem p-3">
+				<h5>DESCUENTO</h5>
+				<p id="descuento"><%= Integer.toString(porcentajeDescuento) %>%</p>
+			</div>
+			<div class="footerItem p-3">
+				<h5>VALOR TOTAL</h5>
+				<p id="totalFinal"><%= Integer.toString(totalFinalValue) %></p>
+			</div>
+		</div>
+	</footer>
 
-	  <!-- Bootstrap 5 -->
-	  <script
-	  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-	  integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-	  crossorigin="anonymous"></script>
+	<!-- Bootstrap 5 -->
+	<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+	crossorigin="anonymous"></script>
 
-	  <!-- jquery -->
-	  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<!-- jquery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-	  <!-- Your own scripts -->
-	  <!-- <script src="./WEB-INF/js/app.js" type="text/javascript"></script> --><!-- this script doesn't work -->
-	  <script><%@include file="/WEB-INF/js/app.js"%></script>
+	<!-- Your own scripts -->
+	<!-- <script src="./WEB-INF/js/app.js" type="text/javascript"></script> --><!-- this script doesn't work -->
+	<script><%@include file="/WEB-INF/js/app.js"%></script>
 </body>
 </html>

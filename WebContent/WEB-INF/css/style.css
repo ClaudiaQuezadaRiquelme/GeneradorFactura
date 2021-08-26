@@ -18,3 +18,7 @@
 #facturaCliente #detalleFact {
 	text-align: right;
 }
+#footerContent {
+	display: flex;
+	justify-content:flex-end;
+}
