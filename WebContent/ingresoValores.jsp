@@ -18,7 +18,7 @@
 	crossorigin="anonymous">
 
 <!-- Your own css -->
-<link rel="stylesheet" href="./WEB-INF/css/style.css">
+<style><%@include file="/WEB-INF/css/style.css"%></style>
 </head>
 <body>
 
@@ -103,7 +103,15 @@
 				  </tr>
 				</tbody>
 			  </table>
-			<button type="submit" class="btn btn-primary">Enviar</button>
+			  <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+				<div class="btn-group me-2" role="group" aria-label="Send form">
+					<button type="submit" class="btn btn-success">Genera Factura</button>
+				</div>
+				<div class="btn-group me-2" role="group" aria-label="Clear form">
+				  	<button id="clearForm" type="button" class="btn btn-outline-secondary">Limpiar</button>
+				</div>
+			  </div>
+			
 		</form>
 	</div>
 
@@ -111,5 +119,12 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
 		crossorigin="anonymous"></script>
+	
+	<!-- jquery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<!-- Your own scripts -->
+	<script><%@include file="/WEB-INF/js/clearForm.js"%></script>
 </body>
 </html>
