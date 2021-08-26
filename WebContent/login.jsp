@@ -12,18 +12,22 @@
 	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 	crossorigin="anonymous">
 </head>
+<!-- Your own css -->
+<style><%@include file="/WEB-INF/css/style.css"%></style>
 <body>
-	<form action="ProcesaLogin" method="post">
-		<div class="mb-3">
-			<label for="nombreUsuario" class="form-label">Usuario</label>
-			<input type="text" name="nombreUsuario" class="form-control">
-		</div>
-		<div class="mb-3">
-			<label for="pass" class="form-label">Contraseña</label>
-			<input type="password" name="pass" class="form-control">
-		</div>
-		<button class="btn btn-primary" type="submit">Entrar</button>
-	</form>
+	<div class="container-sm">
+		<form action="ProcesaLogin" method="post">
+			<div class="mb-3 mt/3">
+				<label for="nombreUsuario" class="form-label">Usuario</label>
+				<input type="text" name="nombreUsuario" class="form-control">
+			</div>
+			<div class="mb-3">
+				<label for="pass" class="form-label">Contraseña</label>
+				<input type="password" name="pass" class="form-control">
+			</div>
+			<button class="btn btn-primary" type="submit">Entrar</button>
+		</form>
+	</div>
 
 	<!-- Bootstrap 5 -->
 	<script

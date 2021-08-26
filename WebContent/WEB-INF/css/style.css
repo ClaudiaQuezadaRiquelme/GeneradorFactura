@@ -1,8 +1,11 @@
-.container {
+.container, .container-sm {
 	margin-top: 39px;
 	border: solid 1px black;
 	padding-top: 30px;
 	padding-bottom: 30px;
+}
+.container-sm {
+	max-width: 540px;
 }
 
 .formData {
