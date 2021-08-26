@@ -8,3 +8,13 @@
 .formData {
 	display: flex;
 }
+#facturaCliente {
+	display: flex;
+	justify-content:space-between;
+}
+#facturaCliente #clientInfo {
+	text-align: left;
+}
+#facturaCliente #detalleFact {
+	text-align: right;
+}

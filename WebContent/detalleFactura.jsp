@@ -35,71 +35,82 @@
 	rel="stylesheet"
 	integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
 	crossorigin="anonymous">
+
+<!-- Your own css -->
+<!-- <link rel="stylesheet" href="/GeneradorFactura/WebContent/WEB-INF/css/style.css"> --><!-- this link doesn't work -->
+<style><%@include file="/WEB-INF/css/style.css"%></style>
 </head>
 <body>
-    <div>
-        <h3>Información de cliente</h3>
-        <p id="nombre"><%= nombre %></p>
-        <p id="rut"><%= empresa %></p>
-        <p id="empresa"><%= rut %></p>
-        <p id="direccion"><%= direccion %></p>
-        <p id="localidad"><%= ciudad %>, <%= pais %></p>
-    </div>
-	<div>
-		<h3>Detalle de pago</h3>
-		<p id="numFact">NUM FACTURA: </p>
-		<p id="idFact">ID FACTURA: </p>
-		<p id="tipoPago">TIPO PAGO: Dinero</p>
-		<p id="empresa">EMPRESA: Importadora</p>
+	<div class="container">
+		<div id="facturaCliente" class="container-fluid">
+			<div id="clientInfo">
+				<h3><strong>Información de cliente</strong></h3>
+				<p id="nombre"><%= nombre %></p>
+				<p id="rut"><%= empresa %></p>
+				<p id="empresa"><%= rut %></p>
+				<p id="direccion"><%= direccion %></p>
+				<p id="localidad"><%= ciudad %>, <%= pais %></p>
+			</div>
+			<div id="detalleFact">
+				<h3><strong>Detalle de pago</strong></h3>
+				<p id="numFact"></p>
+				<p id="idFact"></p>
+				<p id="tipoPago">TIPO PAGO: Dinero</p>
+				<p id="empresa">EMPRESA: Importadora</p>
+			</div>
+		</div>
+		<br>
+		<table class="table table-dark">
+			<thead>
+			  <tr>
+				<th scope="col">ITEM</th>
+				<th scope="col">DESCRIPCIÓN</th>
+				<th scope="col">VALOR UNIDAD</th>
+				<th scope="col">CANTIDAD</th>
+				<th scope="col">VALOR TOTAL</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr>
+				<td>Válvulas Titanio</th>
+				<td>Válvulas de carrera</td>
+				<td id="valvula-price"><%= valvulaPrice %></td>
+				<td id="valvula-count"><%= valvulaCount %></td>
+				<td id="valvula-final-price"><%= valvulaFinalPrice %></td>
+			  </tr>
+			  <tr>
+				<td>Turbo Full Carrera</th>
+				<td>Turbo de competición multimarca</td>
+				<td id="turbo-price"><%= turboPrice %></td>
+				<td id="turbo-count"><%= turboCount %></td>
+				<td id="turbo-final-price"><%= turboFinalPrice %></td>
+			  </tr>
+			  <tr>
+				<td>Kit de Freno Competición</th>
+				<td>Juego de discos, balatas, caliper de competición</td>
+				<td id="freno-price"><%= frenoPrice %></td>
+				<td id="freno-count"><%= frenoCount %></td>
+				<td id="freno-final-price"><%= frenoFinalPrice %></td>
+			  </tr>
+			  <tr>
+				<td>Sistema de refrigeración</th>
+				<td>Sistema enfriamiento motor Carrera</td>
+				<td id="refri-price"><%= refriPrice %></td>
+				<td id="refri-count"><%= refriCount %></td>
+				<td id="refri-final-price"><%= refriFinalPrice %></td>
+			  </tr>
+			  <tr>
+				<td>Plumillas Limpiaparabrisas Standar</th>
+				<td>Plumillas para la lluvia</td>
+				<td id="plumillas-price"><%= plumillasPrice %></td>
+				<td id="plumillas-count"><%= plumillasCount %></td>
+				<td id="plumillas-final-price"><%= plumillasFinalPrice %></td>
+			  </tr>
+			</tbody>
+		</table>
 	</div>
-    <table class="table table-dark">
-		<thead>
-		  <tr>
-			<th scope="col">ITEM</th>
-			<th scope="col">DESCRIPCIÓN</th>
-			<th scope="col">VALOR UNIDAD</th>
-			<th scope="col">CANTIDAD</th>
-            <th scope="col">VALOR TOTAL</th>
-		  </tr>
-		</thead>
-		<tbody>
-		  <tr>
-			<td>Válvulas Titanio</th>
-			<td>Válvulas de carrera</td>
-			<td id="valvula-price"><%= valvulaPrice %></td>
-			<td id="valvula-count"><%= valvulaCount %></td>
-            <td id="valvula-final-price"><%= valvulaFinalPrice %></td>
-		  </tr>
-		  <tr>
-			<td>Turbo Full Carrera</th>
-			<td>Turbo de competición multimarca</td>
-			<td id="turbo-price"><%= turboPrice %></td>
-			<td id="turbo-count"><%= turboCount %></td>
-            <td id="turbo-final-price"><%= turboFinalPrice %></td>
-		  </tr>
-		  <tr>
-			<td>Kit de Freno Competición</th>
-			<td>Juego de discos, balatas, caliper de competición</td>
-			<td id="freno-price"><%= frenoPrice %></td>
-			<td id="freno-count"><%= frenoCount %></td>
-            <td id="freno-final-price"><%= frenoFinalPrice %></td>
-		  </tr>
-		  <tr>
-			<td>Sistema de refrigeración</th>
-			<td>Sistema enfriamiento motor Carrera</td>
-			<td id="refri-price"><%= refriPrice %></td>
-			<td id="refri-count"><%= refriCount %></td>
-            <td id="refri-final-price"><%= refriFinalPrice %></td>
-		  </tr>
-		  <tr>
-			<td>Plumillas Limpiaparabrisas Standar</th>
-			<td>Plumillas para la lluvia</td>
-			<td id="plumillas-price"><%= plumillasPrice %></td>
-			<td id="plumillas-count"><%= plumillasCount %></td>
-            <td id="plumillas-final-price"><%= plumillasFinalPrice %></td>
-		  </tr>
-		</tbody>
-	  </table>
+    
+    
 
 	  <!-- Bootstrap 5 -->
 	  <script
@@ -112,6 +123,7 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 	  <!-- Your own scripts -->
-	  <script src="./WEB-INF/js/app.js" type="text/javascript"></script>
+	  <!-- <script src="./WEB-INF/js/app.js" type="text/javascript"></script> --><!-- this script doesn't work -->
+	  <script><%@include file="/WEB-INF/js/app.js"%></script>
 </body>
 </html>
