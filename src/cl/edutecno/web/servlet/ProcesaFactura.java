@@ -1,6 +1,9 @@
 package cl.edutecno.web.servlet;
 
 import java.io.IOException;
+import java.text.NumberFormat;
+import java.util.Locale;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,8 +21,8 @@ public class ProcesaFactura extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
     
-    protected void calculatePrice () {
-    	
+    protected String calculatePrice (int price, String amount) {
+    	return Integer.toString(price * Integer.parseInt(amount) );
     }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -31,16 +34,22 @@ public class ProcesaFactura extends HttpServlet {
 		String ciudad = request.getParameter("ciudad");
 		String pais = request.getParameter("pais");
 		// Table
-		String valvulaPrice = request.getParameter("valvula-price");
-		String turboPrice = request.getParameter("turbo-price");
-		String frenoPrice = request.getParameter("freno-price");
-		String refriPrice = request.getParameter("refri-price");
-		String plumillasPrice = request.getParameter("plumillas-price");
+		int valvulaPrice = 120000;
+		int turboPrice = 1700000;
+		int frenoPrice = 760000;
+		int refriPrice = 2300000;
+		int plumillasPrice = 10000;
 		String valvulaCount = request.getParameter("valvula-count");
 		String turboCount = request.getParameter("turbo-count");
 		String frenoCount = request.getParameter("freno-count");
 		String refriCount = request.getParameter("refri-count");
 		String plumillasCount = request.getParameter("plumillas-count");
+		
+		System.out.println(valvulaCount);
+		System.out.println(turboCount);
+		System.out.println(frenoCount);
+		System.out.println(refriCount);
+		System.out.println(plumillasCount);
 		
 		// Form
 		request.setAttribute("nombre", nombre);
@@ -49,17 +58,25 @@ public class ProcesaFactura extends HttpServlet {
 		request.setAttribute("direccion", direccion);
 		request.setAttribute("ciudad", ciudad);
 		request.setAttribute("pais", pais);
+
 		// Table
-		request.setAttribute("valvulaPrice", valvulaPrice);
-		request.setAttribute("turboPrice", turboPrice);
-		request.setAttribute("frenoPrice", frenoPrice);
-		request.setAttribute("refriPrice", refriPrice);
-		request.setAttribute("plumillasPrice", plumillasPrice);
-		request.setAttribute("valvulaCount", valvulaCount);
-		request.setAttribute("turboCount", turboCount);
-		request.setAttribute("frenoCount", frenoCount);
-		request.setAttribute("refriCount", refriCount);
-		request.setAttribute("plumillasCount", plumillasCount);
+		request.setAttribute("valvula-count", valvulaCount);
+		request.setAttribute("turbo-count", turboCount);
+		request.setAttribute("freno-count", frenoCount);
+		request.setAttribute("refri-count", refriCount);
+		request.setAttribute("plumillas-count", plumillasCount);
+
+		request.setAttribute("valvula-price", Integer.toString(valvulaPrice));
+		request.setAttribute("turbo-price", Integer.toString(turboPrice));
+		request.setAttribute("freno-price", Integer.toString(frenoPrice));
+		request.setAttribute("refri-price", Integer.toString(refriPrice));
+		request.setAttribute("plumillas-price", Integer.toString(plumillasPrice));
+		
+		request.setAttribute("valvula-final-price", calculatePrice(valvulaPrice, valvulaCount) );
+		request.setAttribute("turbo-final-price", calculatePrice(turboPrice, turboCount) );
+		request.setAttribute("freno-final-price", calculatePrice(frenoPrice, frenoCount) );
+		request.setAttribute("refri-final-price", calculatePrice(refriPrice, refriCount) );
+		request.setAttribute("plumillas-final-price", calculatePrice(plumillasPrice, plumillasCount) );
 		
 		request.getServletContext().getRequestDispatcher("/generaFactura").forward(request, response);
 	}

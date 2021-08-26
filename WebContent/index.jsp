@@ -5,6 +5,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -59,51 +60,52 @@
 					</div>
 				</div>
 			</div>
+			<br>
+			<table class="table table-dark">
+				<thead>
+				  <tr>
+					<th scope="col">ITEM</th>
+					<th scope="col">DESCRIPCIÓN</th>
+					<th scope="col">VALOR UNIDAD</th>
+					<th scope="col">CANTIDAD</th>
+				  </tr>
+				</thead>
+				<tbody>
+				  <tr>
+					<td>Válvulas Titanio</th>
+					<td>Válvulas de carrera</td>
+					<td id="valvula-price">$120.000</td>
+					<td><input type="number" class="form-control" id="valvula-count" name="valvula-count" placeholder="0"></td>
+				  </tr>
+				  <tr>
+					<td>Turbo Full Carrera</th>
+					<td>Turbo de competición multimarca</td>
+					<td id="turbo-price">$1.700.000</td>
+					<td><input type="number" class="form-control" id="turbo-count" name="turbo-count" placeholder="0"></td>
+				  </tr>
+				  <tr>
+					<td>Kit de Freno Competición</th>
+					<td>Juego de discos, balatas, caliper de competición</td>
+					<td id="freno-price">$760.000</td>
+					<td><input type="number" class="form-control" id="freno-count" name="freno-count" placeholder="0"></td>
+				  </tr>
+				  <tr>
+					<td>Sistema de refrigeración</th>
+					<td>Sistema enfriamiento motor Carrera</td>
+					<td id="refri-price">$2.300.000</td>
+					<td><input type="number" class="form-control" id="refri-count" name="refri-count" placeholder="0"></td>
+				  </tr>
+				  <tr>
+					<td>Plumillas Limpiaparabrisas Standar</th>
+					<td>Plumillas para la lluvia</td>
+					<td id="plumillas-price">$10.000</td>
+					<td><input type="number" class="form-control" id="plumillas-count" name="plumillas-count" placeholder="0"></td>
+				  </tr>
+				</tbody>
+			  </table>
 			<button type="submit" class="btn btn-primary">Enviar</button>
 		</form>
 	</div>
-	<table class="table table-dark">
-		<thead>
-		  <tr>
-			<th scope="col">ITEM</th>
-			<th scope="col">DESCRIPCIÓN</th>
-			<th scope="col">VALOR UNIDAD</th>
-			<th scope="col">CANTIDAD</th>
-		  </tr>
-		</thead>
-		<tbody>
-		  <tr>
-			<td>Válvulas Titanio</th>
-			<td>Válvulas de carrera</td>
-			<td id="valvula-price" name="valvula-price">$120.000</td>
-			<td><input type="number" class="form-control" id="valvula-count" name="valvula-count" placeholder="0"></td>
-		  </tr>
-		  <tr>
-			<td>Turbo Full Carrera</th>
-			<td>Turbo de competición multimarca</td>
-			<td id="turbo-price" name="turbo-price">1.700.000</td>
-			<td><input type="number" class="form-control" id="turbo-count" name="turbo-count" placeholder="0"></td>
-		  </tr>
-		  <tr>
-			<td>Kit de Freno Competición</th>
-			<td>Juego de discos, balatas, caliper de competición</td>
-			<td id="freno-price" name="freno-price">$760.000</td>
-			<td><input type="number" class="form-control" id="freno-count" name="freno-count" placeholder="0"></td>
-		  </tr>
-		  <tr>
-			<td>Sistema de refrigeración</th>
-			<td>Sistema enfriamiento motor Carrera</td>
-			<td id="refri-price" name="refri-price">$2.300.000</td>
-			<td><input type="number" class="form-control" id="refri-count" name="refri-count" placeholder="0"></td>
-		  </tr>
-		  <tr>
-			<td>Plumillas Limpiaparabrisas Standar</th>
-			<td>Plumillas para la lluvia</td>
-			<td id="plumillas-price" name="plumillas-price">$10.000</td>
-			<td><input type="number" class="form-control" id="plumillas-count" name="plumillas-count" placeholder="0"></td>
-		  </tr>
-		</tbody>
-	  </table>
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
